@@ -3,31 +3,292 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AwakeApp</title>
+    <title>Awake - Coming Soon for iOS</title>
     <meta
       name="description"
-      content="AwakeApp helps you wake up with intention. The full website is coming soon."
+      content="Awake is an iOS alarm, focus, habit, and routine app built to help you wake up on time and stay accountable."
     />
+    <meta property="og:title" content="Awake - Coming Soon for iOS" />
+    <meta
+      property="og:description"
+      content="Mission-based alarms, focus timers, routines, habit tracking, and global planning for people who need stronger accountability."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.awakeapp.net/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <main class="hero">
-      <p class="eyebrow">awakeapp.net</p>
-      <h1>AwakeApp</h1>
-      <p class="copy">
-        Wake up with more focus, more consistency, and less friction.
-      </p>
-      <p class="subcopy">
-        This is the first version of the website. A full product site is coming
-        soon.
-      </p>
-      <a class="cta" href="mailto:hello@awakeapp.net">Contact</a>
+    <header class="site-header">
+      <a class="brand" href="./index.html">awake</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#features">Features</a>
+        <a href="#custom">Custom</a>
+        <a href="./blog.html">Blog</a>
+        <a href="./privacy.html">Privacy</a>
+      </nav>
+      <a class="header-cta" href="#waitlist">Join waitlist</a>
+    </header>
+
+    <main>
+      <section class="hero section-shell">
+        <div class="hero-copy reveal">
+          <p class="launch-pill">iOS only · Coming soon</p>
+          <h1>awake</h1>
+          <p class="hero-lede">
+            A stronger alarm and daily accountability app for people who sleep
+            through alarms, lose focus, or need structure to start the day.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#waitlist">Join the waitlist</a>
+            <a
+              class="button secondary"
+              href="mailto:hello@awakeapp.net?subject=Awake%20preorder%20request"
+              >Preorder request</a
+            >
+          </div>
+          <p class="microcopy">
+            Early members will get launch updates, beta access notes, and
+            preorder availability first.
+          </p>
+        </div>
+
+        <div class="phone-stage reveal" aria-label="Awake app preview">
+          <div class="phone">
+            <div class="phone-top"></div>
+            <div class="app-screen">
+              <p class="screen-kicker">Morning mission</p>
+              <h2>07:00</h2>
+              <p class="screen-label">Scan your bathroom barcode to dismiss</p>
+              <div class="mission-card">
+                <span>Step 1</span>
+                <strong>Leave the bed</strong>
+              </div>
+              <div class="mission-card active">
+                <span>Step 2</span>
+                <strong>Scan target</strong>
+              </div>
+              <div class="progress-row">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell tl-dr reveal">
+        <p class="section-label">TL;DR</p>
+        <h2>Awake is being built for reliable mornings and focused days.</h2>
+        <p>
+          Set alarms that require action, build routines around habits, run
+          Pomodoro-style focus sessions, track progress, and plan across time
+          zones. Awake is currently in development for iPhone, with launch
+          updates available through the waitlist.
+        </p>
+      </section>
+
+      <section class="section-shell" id="features">
+        <div class="section-heading reveal">
+          <p class="section-label">Features</p>
+          <h2>Everything planned for waking up, focusing, and following through.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <span class="feature-index">01</span>
+            <h3>Mission alarms</h3>
+            <p>
+              Dismiss alarms with math, memory, movement, QR or barcode scans,
+              and other tasks that make it harder to fall back asleep.
+            </p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="feature-index">02</span>
+            <h3>Accountability shield</h3>
+            <p>
+              Stronger wake-up controls for serious users, including snooze
+              limits, volume guidance, and safety checks around alarm dismissal.
+            </p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="feature-index">03</span>
+            <h3>Focus timer</h3>
+            <p>
+              Pomodoro sessions, ambient focus sounds, strict mode ideas, and
+              session history designed for deep work and study blocks.
+            </p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="feature-index">04</span>
+            <h3>Plans and habits</h3>
+            <p>
+              Daily tasks, habit streaks, routines, and future habit alarms that
+              can tie real accountability to the things you want to repeat.
+            </p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="feature-index">05</span>
+            <h3>Global time planner</h3>
+            <p>
+              Compare time zones, find meeting overlap, and plan across cities
+              for remote work, freelancers, teams, and families.
+            </p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="feature-index">06</span>
+            <h3>Progress analytics</h3>
+            <p>
+              Track wake-up consistency, snooze patterns, focus sessions,
+              routine completion, and habit progress over time.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell split-section">
+        <div class="reveal">
+          <p class="section-label">Why it exists</p>
+          <h2>Most alarm apps ring. Awake is designed to make you respond.</h2>
+        </div>
+        <div class="proof-list reveal">
+          <div>
+            <strong>For heavy sleepers</strong>
+            <p>Use high-friction missions so stopping the alarm requires proof.</p>
+          </div>
+          <div>
+            <strong>For distracted mornings</strong>
+            <p>Turn wake-up into a routine with tasks, habit checks, and timers.</p>
+          </div>
+          <div>
+            <strong>For focused work</strong>
+            <p>Move from waking up to getting work done with time-boxed sessions.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell preorder-panel reveal">
+        <div>
+          <p class="section-label">Early access</p>
+          <h2>Join before launch.</h2>
+          <p>
+            The waitlist helps prioritize beta invites, launch pricing, and
+            which power features should ship first.
+          </p>
+        </div>
+        <a
+          class="button primary"
+          href="mailto:hello@awakeapp.net?subject=Awake%20early%20access"
+          >Request early access</a
+        >
+      </section>
+
+      <section class="section-shell waitlist-section" id="waitlist">
+        <div class="waitlist-copy reveal">
+          <p class="section-label">Waitlist</p>
+          <h2>Get launch updates for Awake on iOS.</h2>
+          <p>
+            Email setup is coming later. For now, this form opens your email app
+            with a waitlist request that you can send to the Awake team.
+          </p>
+        </div>
+        <form class="waitlist-form reveal" id="waitlistForm">
+          <label>
+            Name
+            <input name="name" type="text" placeholder="Your name" required />
+          </label>
+          <label>
+            Email
+            <input name="email" type="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            What do you need most?
+            <select name="interest">
+              <option>Mission alarms</option>
+              <option>Focus timer</option>
+              <option>Habits and routines</option>
+              <option>Global time planning</option>
+              <option>Custom feature request</option>
+            </select>
+          </label>
+          <button class="button primary" type="submit">Join waitlist</button>
+        </form>
+      </section>
+
+      <section class="section-shell" id="custom">
+        <div class="custom-panel reveal">
+          <p class="section-label">Custom features</p>
+          <h2>Need a specific workflow for your team, family, or personal routine?</h2>
+          <p>
+            Contact the Awake team for custom feature requests, integrations,
+            accessibility needs, enterprise routines, or specialized alarm and
+            habit workflows.
+          </p>
+          <a
+            class="button secondary light"
+            href="mailto:hello@awakeapp.net?subject=Awake%20custom%20feature%20request"
+            >Contact for custom features</a
+          >
+        </div>
+      </section>
+
+      <section class="section-shell faq-section">
+        <div class="section-heading reveal">
+          <p class="section-label">FAQ</p>
+          <h2>Common questions before launch.</h2>
+        </div>
+        <div class="faq-list">
+          <details class="reveal" open>
+            <summary>Is Awake available now?</summary>
+            <p>
+              Awake is currently coming soon for iOS. Join the waitlist to get
+              launch and beta availability updates.
+            </p>
+          </details>
+          <details class="reveal">
+            <summary>Will Awake be available on Android?</summary>
+            <p>
+              The first release is focused on iPhone. Android support may be
+              considered later based on demand.
+            </p>
+          </details>
+          <details class="reveal">
+            <summary>What makes Awake different from a normal alarm?</summary>
+            <p>
+              Awake is designed around accountability. Missions, routines,
+              focus sessions, habits, and progress history are planned together
+              instead of treating the alarm as a standalone clock.
+            </p>
+          </details>
+          <details class="reveal">
+            <summary>Can I preorder the app?</summary>
+            <p>
+              Preorder details will be announced before launch. You can send a
+              preorder request now to be notified when it opens.
+            </p>
+          </details>
+        </div>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <div>
+        <a class="brand" href="./index.html">awake</a>
+        <p>iOS accountability app · Coming soon</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="./blog.html">Blog</a>
+        <a href="./terms.html">Terms & Conditions</a>
+        <a href="./privacy.html">Privacy Policy</a>
+        <a href="mailto:hello@awakeapp.net">Contact</a>
+      </nav>
+    </footer>
+
+    <script src="./script.js"></script>
   </body>
 </html>

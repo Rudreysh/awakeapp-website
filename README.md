@@ -1,11 +1,15 @@
-# AwakeApp Website
+# awake Website
 
-Minimal starter website for `awakeapp.net`.
+Static pre-launch website for `awakeapp.net`.
 
 ## Files
 
-- `index.html`: basic homepage skeleton
-- `styles.css`: homepage styles
+- `index.html`: landing page with waitlist, preorder, features, FAQ, and contact sections
+- `blog.html`: launch and product update page
+- `privacy.html`: pre-launch privacy policy
+- `terms.html`: pre-launch terms and conditions
+- `styles.css`: shared website styles
+- `script.js`: temporary mailto waitlist form handler
 
 ## Deploy to Vercel
 
