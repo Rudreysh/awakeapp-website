@@ -161,6 +161,86 @@ h3 {
   margin-bottom: 16px;
 }
 
+.app-store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  min-height: 60px;
+  margin-bottom: 18px;
+  padding: 10px 17px 10px 12px;
+  border: 1px solid rgba(17, 18, 15, 0.12);
+  border-radius: 18px;
+  background: #11120f;
+  color: var(--white);
+  text-decoration: none;
+  box-shadow: 0 18px 46px rgba(17, 18, 15, 0.16);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.app-store-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 54px rgba(17, 18, 15, 0.22);
+}
+
+.app-store-badge small,
+.app-store-badge strong {
+  display: block;
+  line-height: 1;
+}
+
+.app-store-badge small {
+  margin-bottom: 5px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.app-store-badge strong {
+  font-size: 1.25rem;
+  letter-spacing: -0.03em;
+}
+
+.app-store-badge.dark {
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.apple-mark {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: var(--white);
+  color: transparent;
+  font-size: 0;
+}
+
+.apple-mark::before {
+  content: "";
+  width: 16px;
+  height: 20px;
+  border-radius: 48% 52% 48% 52% / 60% 60% 42% 42%;
+  background: #11120f;
+  transform: translateY(3px);
+}
+
+.apple-mark::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  width: 9px;
+  height: 5px;
+  border-radius: 10px 0 10px 0;
+  background: #11120f;
+  transform: rotate(-32deg);
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -631,6 +711,10 @@ details p {
     align-items: flex-start;
     flex-direction: column;
   }
+
+  .app-store-badge.dark {
+    margin-top: 4px;
+  }
 }
 
 @media (max-width: 620px) {
@@ -677,6 +761,11 @@ details p {
 
   .app-screen h2 {
     font-size: 3.6rem;
+  }
+
+  .app-store-badge {
+    width: 100%;
+    justify-content: center;
   }
 
   .site-footer nav {
