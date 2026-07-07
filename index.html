@@ -54,13 +54,15 @@
             <a class="button primary" href="#waitlist">Join the waitlist</a>
             <a
               class="button secondary"
-              href="mailto:hello@awakeapp.net?subject=Awake%20preorder%20request"
+              href="#waitlist"
+              data-interest-trigger="Preorder request"
               >Preorder request</a
             >
           </div>
           <a
             class="app-store-badge"
-            href="mailto:hello@awakeapp.net?subject=Awake%20App%20Store%20launch%20notification"
+            href="#waitlist"
+            data-interest-trigger="App Store launch notification"
             aria-label="Get notified when Awake is available on the App Store"
           >
             <img
@@ -331,7 +333,8 @@
         </div>
         <a
           class="app-store-badge dark"
-          href="mailto:hello@awakeapp.net?subject=Awake%20early%20access"
+          href="#waitlist"
+          data-interest-trigger="Early access request"
           aria-label="Request early access to Awake for iOS"
         >
           <img
@@ -346,8 +349,8 @@
           <p class="section-label">Waitlist</p>
           <h2>Get launch updates for Awake on iOS.</h2>
           <p>
-            Email setup is coming later. For now, this form opens your email app
-            with a waitlist request that you can send to the Awake team.
+            Submit your interest here. The site prepares the request in-page so
+            visitors do not get blocked by local Mail app setup.
           </p>
         </div>
         <form class="waitlist-form reveal" id="waitlistForm">
@@ -361,16 +364,37 @@
           </label>
           <label>
             What do you need most?
-            <select name="interest">
+            <select name="interest" id="interestSelect">
+              <option>Join waitlist</option>
               <option>Mission alarms</option>
               <option>Pomodoro timer</option>
               <option>Countdown timer</option>
               <option>App blocking and Screen Time</option>
               <option>Custom sounds</option>
+              <option>Preorder request</option>
+              <option>App Store launch notification</option>
+              <option>Early access request</option>
               <option>Custom feature request</option>
             </select>
           </label>
+          <label class="conditional-field" id="customFeatureField" hidden>
+            What custom feature do you need?
+            <textarea
+              name="custom_feature_details"
+              id="customFeatureDetails"
+              rows="4"
+              placeholder="Describe the exact feature, workflow, or problem you want Awake to solve."
+            ></textarea>
+          </label>
           <button class="button primary" type="submit">Join waitlist</button>
+          <div class="form-feedback" id="formFeedback" hidden>
+            <strong>Request prepared.</strong>
+            <p>
+              Your request was copied. Send it to
+              <a href="mailto:info@awakeapp.net">info@awakeapp.net</a>
+              from any email app or support tool you prefer.
+            </p>
+          </div>
         </form>
       </section>
 
@@ -386,7 +410,8 @@
           </p>
           <a
             class="button secondary light"
-            href="mailto:hello@awakeapp.net?subject=Awake%20custom%20feature%20request"
+            href="#waitlist"
+            data-interest-trigger="Custom feature request"
             >Contact for custom features</a
           >
         </div>
@@ -440,7 +465,7 @@
         <a href="./blog.html">Blog</a>
         <a href="./terms.html">Terms & Conditions</a>
         <a href="./privacy.html">Privacy Policy</a>
-        <a href="mailto:hello@awakeapp.net">Contact</a>
+        <a href="mailto:info@awakeapp.net">Contact</a>
       </nav>
     </footer>
 

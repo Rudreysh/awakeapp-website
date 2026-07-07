@@ -20,10 +20,14 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 96px;
 }
 
 body {
   margin: 0;
+  min-width: 280px;
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
   font-family: "Instrument Sans", sans-serif;
   color: var(--ink);
   background:
@@ -210,6 +214,7 @@ h3 {
   font-weight: 800;
   text-decoration: none;
   cursor: pointer;
+  touch-action: manipulation;
   transition:
     transform 180ms ease,
     box-shadow 180ms ease,
@@ -536,7 +541,8 @@ label {
 }
 
 input,
-select {
+select,
+textarea {
   width: 100%;
   min-height: 48px;
   padding: 0 14px;
@@ -545,6 +551,40 @@ select {
   background: rgba(255, 255, 255, 0.96);
   color: var(--ink);
   font: inherit;
+  font-size: 16px;
+}
+
+textarea {
+  min-height: 112px;
+  padding: 14px;
+  resize: vertical;
+}
+
+.conditional-field[hidden] {
+  display: none;
+}
+
+.form-feedback {
+  padding: 16px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.form-feedback strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--white);
+}
+
+.form-feedback p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.55;
+}
+
+.form-feedback a {
+  color: var(--lime);
 }
 
 .custom-panel {
@@ -676,7 +716,7 @@ details p {
 
 @media (max-width: 900px) {
   .site-header {
-    align-items: flex-start;
+    align-items: center;
     border-radius: 24px;
   }
 
@@ -691,6 +731,7 @@ details p {
   }
 
   .hero {
+    min-height: auto;
     gap: 34px;
     padding-top: 56px;
   }
@@ -728,15 +769,53 @@ details p {
   }
 
   .header-cta {
-    display: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 9px 14px;
+    font-size: 0.82rem;
   }
 
   h1 {
-    font-size: 5.2rem;
+    font-size: clamp(4.2rem, 23vw, 5.2rem);
   }
 
   h2 {
-    font-size: 2.35rem;
+    font-size: clamp(2.05rem, 10.5vw, 2.5rem);
+  }
+
+  .site-header {
+    margin-top: max(8px, env(safe-area-inset-top));
+    padding: 8px 10px 8px 14px;
+    border-radius: 20px;
+  }
+
+  .hero {
+    gap: 28px;
+    padding: 44px 0 58px;
+  }
+
+  .hero-lede {
+    font-size: 1.1rem;
+  }
+
+  .hero-support {
+    margin-bottom: 22px;
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .button {
+    min-height: 50px;
   }
 
   .feature-grid {
@@ -748,17 +827,78 @@ details p {
   .custom-panel,
   .waitlist-section,
   .page-main article {
-    padding: 26px;
+    padding: 22px;
     border-radius: 22px;
   }
 
+  .tl-dr,
+  .preorder-panel,
+  .custom-panel,
+  .how-section,
+  .mission-section,
+  .feature-grid,
+  .split-section,
+  .waitlist-section {
+    margin-bottom: 64px;
+  }
+
+  .section-heading {
+    margin-bottom: 22px;
+  }
+
+  .how-card,
+  .mission-type,
+  .feature-card {
+    min-height: auto;
+    padding: 22px;
+  }
+
+  .how-card span,
+  .mission-type span,
+  .feature-index {
+    margin-bottom: 24px;
+  }
+
+  .split-section,
+  .waitlist-section {
+    gap: 24px;
+  }
+
+  .preorder-panel {
+    gap: 18px;
+  }
+
+  .waitlist-form {
+    gap: 16px;
+    padding: 18px;
+  }
+
+  details {
+    padding: 18px;
+  }
+
+  .faq-section {
+    margin-bottom: 64px;
+  }
+
+  .phone-stage {
+    min-height: auto;
+    padding: 28px 16px;
+    border-radius: 26px;
+  }
+
   .phone {
-    width: 260px;
-    min-height: 540px;
+    width: min(260px, 100%);
+    min-height: 520px;
+    border-width: 8px;
+    border-radius: 40px;
+    transform: none;
   }
 
   .app-screen {
-    min-height: 484px;
+    min-height: 464px;
+    padding: 58px 16px 18px;
+    border-radius: 31px;
   }
 
   .app-screen h2 {
@@ -775,8 +915,88 @@ details p {
   }
 
   .site-footer nav {
+    width: 100%;
     align-items: flex-start;
     flex-direction: column;
-    gap: 12px;
+    gap: 2px;
+  }
+
+  .site-footer nav a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .site-footer {
+    padding-bottom: max(32px, env(safe-area-inset-bottom));
+  }
+
+  .page-main {
+    padding: 52px 0 68px;
+  }
+
+  .page-main h1 {
+    font-size: clamp(3rem, 18vw, 4.5rem);
+  }
+
+  .page-main ul,
+  .page-main ol {
+    padding-left: 20px;
+  }
+
+  .page-main a {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 360px) {
+  .section-shell,
+  .site-header,
+  .site-footer,
+  .page-main {
+    width: calc(100% - 16px);
+  }
+
+  .header-cta {
+    padding-inline: 12px;
+  }
+
+  h1 {
+    font-size: 4.15rem;
+  }
+
+  .tl-dr,
+  .preorder-panel,
+  .custom-panel,
+  .waitlist-section,
+  .page-main article {
+    padding: 20px;
+  }
+
+  .waitlist-form {
+    padding: 16px;
+  }
+
+  .phone {
+    width: 240px;
+  }
+
+  .app-screen h2 {
+    font-size: 3.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
