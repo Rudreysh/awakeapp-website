@@ -51,13 +51,10 @@
             who need more than a basic alarm.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#waitlist">Join the waitlist</a>
-            <a
-              class="button secondary"
-              href="#waitlist"
-              data-interest-trigger="Preorder request"
-              >Preorder request</a
-            >
+            <button class="button primary early-adopter-trigger" type="button">
+              Become an early adopter - $5
+            </button>
+            <a class="button secondary" href="#waitlist">Join the waitlist</a>
           </div>
           <a
             class="app-store-badge"
@@ -71,8 +68,8 @@
             />
           </a>
           <p class="microcopy">
-            Early members will get launch updates, beta access notes, and
-            preorder availability first.
+            Join free for launch news, or reserve lifetime access as one of
+            Awake's first members.
           </p>
         </div>
 
@@ -322,26 +319,33 @@
         </div>
       </section>
 
-      <section class="section-shell preorder-panel reveal">
-        <div>
-          <p class="section-label">Early access</p>
-          <h2>Join before launch.</h2>
+      <section class="section-shell early-adopter-panel reveal" id="early-adopter">
+        <div class="early-adopter-copy">
+          <p class="section-label">Founding access</p>
+          <h2>Own your mornings for $5.</h2>
           <p>
-            The waitlist helps prioritize beta invites, launch pricing, and
-            which power features should ship first.
+            Become an Awake Early Adopter before the App Store launch. Your
+            one-time reservation supports the first release and unlocks a
+            founding-member place in the community.
+          </p>
+          <button class="button primary early-adopter-trigger" type="button">
+            Become an early adopter - $5
+          </button>
+          <p class="offer-note">
+            One payment. No subscription. Full refund on request before app
+            access is granted.
           </p>
         </div>
-        <a
-          class="app-store-badge dark"
-          href="#waitlist"
-          data-interest-trigger="Early access request"
-          aria-label="Request early access to Awake for iOS"
-        >
-          <img
-            src="./app-store-badge.svg"
-            alt="App Store logo"
-          />
-        </a>
+        <div class="perk-card">
+          <p class="perk-kicker">Included with early adopter access</p>
+          <ul class="perk-list">
+            <li><span aria-hidden="true">01</span>Lifetime access to Awake</li>
+            <li><span aria-hidden="true">02</span>Priority TestFlight invites</li>
+            <li><span aria-hidden="true">03</span>Exclusive Founding Member badge</li>
+            <li><span aria-hidden="true">04</span>First access to launch updates and new features</li>
+          </ul>
+          <p class="perk-footer">Limited founding offer - $5 one time</p>
+        </div>
       </section>
 
       <section class="section-shell waitlist-section" id="waitlist">
@@ -349,8 +353,8 @@
           <p class="section-label">Waitlist</p>
           <h2>Get launch updates for Awake on iOS.</h2>
           <p>
-            Submit your interest here. The site prepares the request in-page so
-            visitors do not get blocked by local Mail app setup.
+            Get launch news, beta availability, and product updates. Tell us
+            what would make Awake useful for your morning or focus routine.
           </p>
         </div>
         <form class="waitlist-form reveal" id="waitlistForm">
@@ -361,6 +365,10 @@
           <label>
             Email
             <input name="email" type="email" placeholder="you@example.com" required />
+          </label>
+          <label class="honeypot" aria-hidden="true">
+            Leave this field empty
+            <input name="website" type="text" tabindex="-1" autocomplete="off" />
           </label>
           <label>
             What do you need most?
@@ -388,13 +396,13 @@
           </label>
           <button class="button primary" type="submit">Join waitlist</button>
           <div class="form-feedback" id="formFeedback" hidden>
-            <strong>Request prepared.</strong>
+            <strong>You are on the list.</strong>
             <p>
-              Your request was copied. Send it to
-              <a href="mailto:info@awakeapp.net">info@awakeapp.net</a>
-              from any email app or support tool you prefer.
+              Watch your inbox for Awake launch and beta news. For questions,
+              contact <a href="mailto:info@awakeapp.net">info@awakeapp.net</a>.
             </p>
           </div>
+          <div class="form-feedback form-error" id="formError" hidden></div>
         </form>
       </section>
 
@@ -448,13 +456,47 @@
           <details class="reveal">
             <summary>Can I preorder the app?</summary>
             <p>
-              Preorder details will be announced before launch. You can send a
-              preorder request now to be notified when it opens.
+              Yes. Early Adopters can reserve lifetime access for a one-time
+              $5 payment. The offer includes priority TestFlight access and a
+              Founding Member badge. You can request a full refund any time
+              before app access is granted.
             </p>
           </details>
         </div>
       </section>
     </main>
+
+    <dialog class="early-adopter-modal" id="earlyAdopterModal" aria-labelledby="earlyAdopterTitle">
+      <div class="modal-heading">
+        <div>
+          <p class="section-label">Founding offer</p>
+          <h2 id="earlyAdopterTitle">Unlock lifetime access.</h2>
+        </div>
+        <button class="modal-close" type="button" aria-label="Close early adopter offer">&times;</button>
+      </div>
+      <p class="modal-lede">
+        Join before launch for a one-time $5 payment. Stripe processes payment
+        securely; Awake never sees your card details.
+      </p>
+      <ul class="modal-perks">
+        <li>Lifetime access to Awake</li>
+        <li>Priority access to TestFlight beta builds</li>
+        <li>Exclusive Founding Member badge</li>
+        <li>Full refund on request before app access is granted</li>
+      </ul>
+      <form id="earlyAdopterForm" class="early-adopter-form">
+        <label>
+          Email
+          <input name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+        </label>
+        <button class="button primary" type="submit">Pay $5 and become an early adopter</button>
+        <p class="checkout-note">
+          By continuing, you agree to the <a href="./terms.html">Terms &amp; Conditions</a>
+          and <a href="./privacy.html">Privacy Policy</a>.
+        </p>
+        <p class="modal-feedback" id="earlyAdopterFeedback" role="status" hidden></p>
+      </form>
+    </dialog>
 
     <footer class="site-footer">
       <div>
@@ -469,6 +511,7 @@
       </nav>
     </footer>
 
+    <script src="./config.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
