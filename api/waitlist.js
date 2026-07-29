@@ -5,6 +5,17 @@ function readText(value, maxLength = 200) {
   return typeof value === "string" ? value.trim().slice(0, maxLength) : "";
 }
 
+async function sendEmail(apiKey, message) {
+  return fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(message),
+  });
+}
+
 export default async function handler(request, response) {
   if (request.method !== "POST") {
     response.setHeader("Allow", "POST");
@@ -48,19 +59,12 @@ export default async function handler(request, response) {
     .join("\n");
 
   try {
-    const resendResponse = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from,
-        to: [recipient],
-        reply_to: email,
-        subject: `[Awake] ${interest} - ${name}`,
-        text: emailBody,
-      }),
+    const resendResponse = await sendEmail(apiKey, {
+      from,
+      to: [recipient],
+      reply_to: email,
+      subject: `[Awake] ${interest} - ${name}`,
+      text: emailBody,
     });
 
     if (!resendResponse.ok) {
@@ -72,5 +76,37 @@ export default async function handler(request, response) {
     return response.status(502).json({ error: "We could not save your signup. Please try again." });
   }
 
-  return response.status(200).json({ ok: true });
+  const confirmationText = [
+    `Hi ${name},`,
+    "",
+    "You are on the Awake iOS waitlist.",
+    "",
+    "We will email you about beta availability, launch news, and Early Adopter access. We received your interest in:",
+    interest,
+    "",
+    "If you did not submit this form, you can ignore this email. To stop receiving non-essential Awake updates, reply to this email or contact info@awakeapp.net.",
+    "",
+    "Awake",
+  ].join("\n");
+
+  let confirmationSent = false;
+
+  try {
+    const confirmationResponse = await sendEmail(apiKey, {
+      from,
+      to: [email],
+      reply_to: recipient,
+      subject: "You are on the Awake waitlist",
+      text: confirmationText,
+    });
+
+    confirmationSent = confirmationResponse.ok;
+    if (!confirmationSent) {
+      console.error("Resend could not deliver the waitlist confirmation.", await confirmationResponse.text());
+    }
+  } catch (error) {
+    console.error("Waitlist confirmation delivery failed.", error);
+  }
+
+  return response.status(200).json({ ok: true, confirmationSent });
 }

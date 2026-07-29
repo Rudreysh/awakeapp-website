@@ -52,6 +52,7 @@ async function submitLead({ name, email, interest, details = "", website = "" })
 
   const data = await result.json().catch(() => ({}));
   if (!result.ok) throw new Error(data.error || "We could not save your signup. Please try again.");
+  return data;
 }
 
 if (interestSelect) {
@@ -78,7 +79,7 @@ if (waitlistForm) {
     submitButton.textContent = "Joining...";
 
     try {
-      await submitLead({
+      const signupResult = await submitLead({
         name: formData.get("name"),
         email: formData.get("email"),
         interest: formData.get("interest"),
@@ -87,7 +88,12 @@ if (waitlistForm) {
       });
       waitlistForm.reset();
       syncCustomFeatureField();
-      showMessage(formFeedback, "You are on the list. Watch your inbox for Awake launch and beta news.");
+      showMessage(
+        formFeedback,
+        signupResult.confirmationSent
+          ? "You are on the list. Check your inbox for a confirmation email."
+          : "You are on the list. We will send Awake launch and beta news to your inbox."
+      );
     } catch (error) {
       showMessage(formError, error.message);
     } finally {
