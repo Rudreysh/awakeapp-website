@@ -3,5 +3,5 @@
  * Payment Link created for Awake's $5 Early Adopter product in Stripe.
  */
 window.AWAKE_CONFIG = Object.freeze({
-  stripePaymentLink: "",
+  stripePaymentLink: "https://buy.stripe.com/cNi00j6qBbKa7ZHbkS3sI00",
 });
