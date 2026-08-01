@@ -75,20 +75,24 @@
 
         <div class="phone-stage reveal" aria-label="Awake app preview">
           <div class="phone">
-            <div class="phone-top"></div>
-            <div class="app-screen">
-              <p class="screen-kicker">Morning mission</p>
-              <h2>07:00</h2>
-              <p class="screen-label">Scan your bathroom barcode to dismiss</p>
-              <div class="mission-card">
-                <span>Step 1</span>
-                <strong>Leave the bed</strong>
-              </div>
-              <div class="mission-card active">
-                <span>Step 2</span>
-                <strong>Scan target</strong>
-              </div>
-              <div class="progress-row">
+            <div class="app-screen app-slideshow">
+              <img
+                class="app-slide app-slide-one"
+                src="./assets/awake-alarm-list.webp"
+                alt="Awake alarm list with scheduled morning alarms"
+                fetchpriority="high"
+              />
+              <img
+                class="app-slide app-slide-two"
+                src="./assets/awake-alarm-editor.webp"
+                alt="Awake alarm editor with the 6 AM wake-up time"
+              />
+              <img
+                class="app-slide app-slide-three"
+                src="./assets/awake-alarm-schedule.webp"
+                alt="Awake alarm schedule and wake-up mission settings"
+              />
+              <div class="slideshow-indicator" aria-hidden="true">
                 <span></span>
                 <span></span>
                 <span></span>

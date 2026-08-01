@@ -269,8 +269,7 @@ h3 {
 .phone {
   position: relative;
   width: 292px;
-  min-height: 592px;
-  padding: 18px;
+  padding: 8px;
   border: 10px solid #151713;
   border-radius: 46px;
   background: #10130f;
@@ -279,90 +278,92 @@ h3 {
 }
 
 .phone-top {
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  width: 86px;
-  height: 25px;
-  border-radius: 999px;
-  background: #10130f;
-  transform: translateX(-50%);
-  z-index: 2;
+  display: none;
 }
 
 .app-screen {
-  min-height: 536px;
-  padding: 66px 20px 22px;
+  position: relative;
+  aspect-ratio: 1170 / 2532;
   border-radius: 34px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.28), transparent 38%),
-    linear-gradient(160deg, #f7fbec 0%, #dfeecd 100%);
+  overflow: hidden;
+  background: #f9f8f5;
 }
 
-.screen-kicker {
-  margin-bottom: 10px;
-  color: var(--green);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
+.app-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: app-slide-show 15s infinite;
 }
 
-.app-screen h2 {
-  margin-bottom: 12px;
-  font-family: "Instrument Sans", sans-serif;
-  font-size: 4.4rem;
-  line-height: 0.95;
-  letter-spacing: -0.06em;
+.app-slide-one {
+  animation-delay: 0s;
 }
 
-.screen-label {
-  margin-bottom: 26px;
-  color: #43503d;
-  line-height: 1.45;
+.app-slide-two {
+  animation-delay: 5s;
 }
 
-.mission-card {
-  margin-bottom: 12px;
-  padding: 16px;
-  border: 1px solid rgba(31, 62, 42, 0.12);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.66);
+.app-slide-three {
+  animation-delay: 10s;
 }
 
-.mission-card span {
-  display: block;
-  margin-bottom: 5px;
-  color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 800;
+@keyframes app-slide-show {
+  0%,
+  27% {
+    opacity: 1;
+  }
+
+  33%,
+  100% {
+    opacity: 0;
+  }
 }
 
-.mission-card.active {
-  background: var(--green-deep);
-  color: var(--white);
-}
-
-.mission-card.active span {
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.progress-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  margin-top: 24px;
-}
-
-.progress-row span {
-  height: 7px;
+.slideshow-indicator {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  z-index: 2;
+  display: flex;
+  gap: 5px;
+  padding: 7px;
   border-radius: 999px;
-  background: rgba(31, 62, 42, 0.2);
+  background: rgba(17, 18, 15, 0.48);
+  backdrop-filter: blur(8px);
 }
 
-.progress-row span:first-child,
-.progress-row span:nth-child(2) {
-  background: var(--green-deep);
+.slideshow-indicator span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  animation: app-slide-indicator 15s infinite;
+}
+
+.slideshow-indicator span:nth-child(2) {
+  animation-delay: 5s;
+}
+
+.slideshow-indicator span:nth-child(3) {
+  animation-delay: 10s;
+}
+
+@keyframes app-slide-indicator {
+  0%,
+  27% {
+    width: 18px;
+    background: var(--white);
+  }
+
+  33%,
+  100% {
+    width: 6px;
+    background: rgba(255, 255, 255, 0.5);
+  }
 }
 
 .tl-dr,
@@ -1090,20 +1091,13 @@ details p {
 
   .phone {
     width: min(260px, 100%);
-    min-height: 520px;
     border-width: 8px;
     border-radius: 40px;
     transform: none;
   }
 
   .app-screen {
-    min-height: 464px;
-    padding: 58px 16px 18px;
     border-radius: 31px;
-  }
-
-  .app-screen h2 {
-    font-size: 3.6rem;
   }
 
   .app-store-badge {
@@ -1183,9 +1177,6 @@ details p {
     width: 240px;
   }
 
-  .app-screen h2 {
-    font-size: 3.2rem;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1199,5 +1190,14 @@ details p {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .app-slide,
+  .slideshow-indicator span {
+    animation: none;
+  }
+
+  .app-slide-one {
+    opacity: 1;
   }
 }
