@@ -210,35 +210,81 @@
       </section>
 
       <section class="section-shell mission-section" id="missions">
-        <div class="section-heading reveal">
-          <p class="section-label">Missions</p>
-          <h2>Different ways to prove you are actually awake.</h2>
+        <div class="mission-intro reveal">
+          <div class="section-heading">
+            <p class="section-label">Mission library</p>
+            <h2>Give your alarm a job that gets you moving.</h2>
+          </div>
+          <p>
+            Choose the kind of effort that breaks through your snooze habit.
+            Awake can make you solve, move, search, or speak before your alarm
+            is dismissed.
+          </p>
         </div>
-        <div class="mission-type-grid">
-          <article class="mission-type reveal">
-            <span>Brain</span>
-            <h3>Think before dismissing</h3>
+
+        <div class="mission-board reveal" aria-label="Awake mission types">
+          <aside class="mission-board-note">
+            <span class="mission-board-time">06:00</span>
+            <p class="mission-board-label">Your alarm is ringing</p>
             <p>
-              Math, memory match, typing, color tiles, and tic tac toe wake the
-              brain before the alarm turns off.
+              One selected mission stands between you and the dismiss button.
             </p>
-          </article>
-          <article class="mission-type reveal">
-            <span>Body</span>
-            <h3>Get out of bed</h3>
-            <p>
-              Steps, shake, squats, push-ups, QR/barcode scans, and household
-              item hunts make dismissal physical.
-            </p>
-          </article>
-          <article class="mission-type reveal">
-            <span>Voice</span>
-            <h3>Speak with intention</h3>
-            <p>
-              Affirmation and verse missions can require spoken confirmation,
-              helping the morning start with a deliberate action.
-            </p>
-          </article>
+            <div class="mission-route" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <strong>Choose your wake-up route.</strong>
+          </aside>
+
+          <div class="mission-stations">
+            <article class="mission-station mission-station-mind">
+              <div class="mission-glyph mission-glyph-mind" aria-hidden="true">
+                <i>2</i><b>+</b><em>7</em>
+              </div>
+              <p class="mission-number">01 / Think</p>
+              <h3>Mind awake</h3>
+              <p>Solve or remember your way out of the alarm.</p>
+              <ul class="mission-tags" aria-label="Mind missions">
+                <li>Math</li><li>Memory</li><li>Typing</li><li>Color Tiles</li><li>Tic-Tac-Toe</li>
+              </ul>
+            </article>
+
+            <article class="mission-station mission-station-body">
+              <div class="mission-glyph mission-glyph-body" aria-hidden="true">
+                <i></i><i></i><i></i>
+              </div>
+              <p class="mission-number">02 / Move</p>
+              <h3>Body awake</h3>
+              <p>Turn off the alarm only after a real physical action.</p>
+              <ul class="mission-tags" aria-label="Movement missions">
+                <li>Shake</li><li>Step</li><li>Squat</li><li>Push-ups</li><li>Plank Hold</li><li>Deep Breathing</li>
+              </ul>
+            </article>
+
+            <article class="mission-station mission-station-search">
+              <div class="mission-glyph mission-glyph-search" aria-hidden="true">
+                <i></i><b></b>
+              </div>
+              <p class="mission-number">03 / Search</p>
+              <h3>Leave the bedroom</h3>
+              <p>Send yourself to a target, a room, or an object worth finding.</p>
+              <ul class="mission-tags" aria-label="Search missions">
+                <li>QR/Barcode</li><li>Item Hunt</li><li>Object Hunt</li><li>Photo</li>
+              </ul>
+              <p class="mission-prompt">Prompt ideas: Sky Photo · Make Your Bed</p>
+            </article>
+
+            <article class="mission-station mission-station-voice">
+              <div class="mission-glyph mission-glyph-voice" aria-hidden="true">
+                <i></i><i></i><i></i>
+              </div>
+              <p class="mission-number">04 / Speak</p>
+              <h3>Start with intention</h3>
+              <p>Say something deliberate before you hand the morning to your phone.</p>
+              <ul class="mission-tags" aria-label="Voice missions">
+                <li>Affirmation</li><li>Bible Verse</li><li>Quran Verse</li><li>Bhagavad Gita Verse</li>
+              </ul>
+            </article>
+          </div>
         </div>
       </section>
 
