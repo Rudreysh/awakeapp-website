@@ -945,18 +945,37 @@ details p {
   color: #52604f;
   font-size: 0.76rem;
   font-weight: 800;
+  text-decoration: none;
+  transition: border-color 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
-.footer-social-item b {
-  display: grid;
-  width: 21px;
-  height: 21px;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--green-deep);
-  color: var(--lime);
-  font-size: 0.62rem;
-  letter-spacing: -0.04em;
+.footer-social-item[href]:hover {
+  border-color: var(--green-deep);
+  color: var(--green-deep);
+  transform: translateY(-2px);
+}
+
+.footer-social-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  fill: currentColor;
+}
+
+.footer-social-icon rect,
+.footer-social-icon circle {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.footer-social-icon circle:last-child {
+  fill: currentColor;
+  stroke: none;
+}
+
+.footer-social-item-disabled {
+  opacity: 0.58;
 }
 
 .footer-bottom {
