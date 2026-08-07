@@ -39,7 +39,7 @@ export default async function handler(request, response) {
 
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.WAITLIST_FROM;
-  const recipient = process.env.WAITLIST_RECIPIENT || "info@awakeapp.net";
+  const recipient = process.env.WAITLIST_RECIPIENT || "hello@dawnify.app";
 
   if (!apiKey || !from) {
     return response.status(503).json({
@@ -48,7 +48,7 @@ export default async function handler(request, response) {
   }
 
   const emailBody = [
-    "New Awake pre-launch signup",
+    "New Dawnify pre-launch signup",
     "",
     `Name: ${name}`,
     `Email: ${email}`,
@@ -63,7 +63,7 @@ export default async function handler(request, response) {
       from,
       to: [recipient],
       reply_to: email,
-      subject: `[Awake] ${interest} - ${name}`,
+      subject: `[Dawnify] ${interest} - ${name}`,
       text: emailBody,
     });
 
@@ -79,14 +79,14 @@ export default async function handler(request, response) {
   const confirmationText = [
     `Hi ${name},`,
     "",
-    "You are on the Awake iOS waitlist.",
+    "You are on the Dawnify iOS waitlist.",
     "",
     "We will email you about beta availability, launch news, and Early Adopter access. We received your interest in:",
     interest,
     "",
-    "If you did not submit this form, you can ignore this email. To stop receiving non-essential Awake updates, reply to this email or contact info@awakeapp.net.",
+    "If you did not submit this form, you can ignore this email. To stop receiving non-essential Dawnify updates, reply to this email or contact hello@dawnify.app.",
     "",
-    "Awake",
+    "Dawnify",
   ].join("\n");
 
   let confirmationSent = false;
@@ -96,7 +96,7 @@ export default async function handler(request, response) {
       from,
       to: [email],
       reply_to: recipient,
-      subject: "You are on the Awake waitlist",
+      subject: "You are on the Dawnify waitlist",
       text: confirmationText,
     });
 

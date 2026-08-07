@@ -1,6 +1,6 @@
-# awake Website
+# Dawnify Website
 
-Static pre-launch website for `awakeapp.net`.
+Static pre-launch website for `dawnify.app`.
 
 ## Files
 
@@ -28,8 +28,8 @@ No build step is required for this version.
    `https://buy.stripe.com/...` URL into `config.js` as `stripePaymentLink`.
 2. In Vercel, add these environment variables:
    - `RESEND_API_KEY`: API key from Resend.
-   - `WAITLIST_FROM`: a verified sender, for example `Awake <hello@awakeapp.net>`.
-   - `WAITLIST_RECIPIENT`: optional; defaults to `info@awakeapp.net`.
+   - `WAITLIST_FROM`: a verified sender, for example `Dawnify <hello@dawnify.app>`.
+   - `WAITLIST_RECIPIENT`: optional; defaults to `hello@dawnify.app`.
 3. Redeploy. The waitlist form sends each signup to the recipient, and the
    Early Adopter form records checkout intent before opening Stripe Checkout.
 

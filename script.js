@@ -11,7 +11,7 @@ const earlyAdopterFeedback = document.querySelector("#earlyAdopterFeedback");
 const earlyAdopterTriggers = document.querySelectorAll(".early-adopter-trigger");
 const closeEarlyAdopter = document.querySelector(".modal-close");
 
-const stripePaymentLink = window.AWAKE_CONFIG?.stripePaymentLink?.trim() || "";
+const stripePaymentLink = window.DAWNIFY_CONFIG?.stripePaymentLink?.trim() || "";
 
 function syncCustomFeatureField() {
   if (!interestSelect || !customFeatureField || !customFeatureDetails) return;
@@ -92,7 +92,7 @@ if (waitlistForm) {
         formFeedback,
         signupResult.confirmationSent
           ? "You are on the list. Check your inbox for a confirmation email."
-          : "You are on the list. We will send Awake launch and beta news to your inbox."
+          : "You are on the list. We will send Dawnify launch and beta news to your inbox."
       );
     } catch (error) {
       showMessage(formError, error.message);

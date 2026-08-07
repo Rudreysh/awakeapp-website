@@ -1,7 +1,7 @@
 /*
  * Stripe Payment Links are public URLs. Replace the empty value below with the
- * Payment Link created for Awake's $5 Early Adopter product in Stripe.
+ * Payment Link created for Dawnify's $5 Early Adopter product in Stripe.
  */
-window.AWAKE_CONFIG = Object.freeze({
+window.DAWNIFY_CONFIG = Object.freeze({
   stripePaymentLink: "https://buy.stripe.com/cNi00j6qBbKa7ZHbkS3sI00",
 });
