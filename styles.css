@@ -995,6 +995,32 @@ details p {
   font-weight: 700;
 }
 
+.footer-contact {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 3px;
+  color: #52604f;
+  font-size: 0.86rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.footer-contact span {
+  color: var(--green-deep);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.footer-contact:hover {
+  color: var(--green-deep);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
 .footer-status {
   display: inline-flex;
   gap: 8px;
